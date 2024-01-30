@@ -88,3 +88,114 @@ const convertText = (text) => {
 */
 
 /*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 3
+
+/* Реализуйте функцию getNumberExplanation(), которая принимает на вход число и возвращает объяснение этого числа. Если для числа нет объяснения, то возвращается just a number. Объяснения есть только для следующих чисел:
+
+* 666 - devil number
+* 42 - answer for everything
+* 7 - prime number
+
+Примеры вызова функции:
+
+getNumberExplanation(8);   // just a number
+getNumberExplanation(666); // devil number
+getNumberExplanation(42);  // answer for everything
+getNumberExplanation(7);   // prime number
+*/
+
+/* МОЕ РЕШЕНИЕ
+const getNumberExplanation = (num) => {
+  switch (num) {
+    case 666:
+      return 'devil number';
+    case 42:
+      return 'answer for everything';
+    case 7:
+      return 'prime number';
+    default:
+      return 'just a number';
+  }
+};
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+const getNumberExplanation = (number) => {
+  switch (number) {
+    case 666:
+      return 'devil number';
+    case 7:
+      return 'prime number';
+    case 42:
+      return 'answer for everything';
+    default:
+      return 'just a number';
+  }
+};
+*/
+
+/*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 4
+
+/* Модифицируйте функцию printNumbers() так, чтобы она выводила числа в обратном порядке. Для этого нужно идти от верхней границы к нижней. То есть счётчик должен быть инициализирован максимальным значением, а в теле цикла его нужно уменьшать до нижней границы.
+
+printNumbers(4);
+4
+3
+2
+1
+finished!
+*/
+
+/* МОЕ РЕШЕНИЕ
+-------------------------------------
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+let i = initialNumber;
+  while (i >= 1) {
+    console.log(i);
+    i -= 1;
+  }
+  console.log('finished!');
+*/
+
+/*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 5
+
+/*
+Реализуйте функцию joinNumbersFromRange(), которая объединяет все числа из диапазона в строку и возвращает её:
+
+joinNumbersFromRange(1, 1); // '1'
+joinNumbersFromRange(2, 3); // '23'
+joinNumbersFromRange(5, 10); // '5678910'
+*/
+
+/* МОЕ РЕШЕНИЕ
+const joinNumbersFromRange = (start, finish) => {
+  let i = start;
+  let result = '';
+  while (i <= finish) {
+    result = `${result}${i}`;
+    i += 1;
+  }
+  return result;
+};
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+const joinNumbersFromRange = (start, finish) => {
+  let i = start;
+  let result = '';
+
+  while (i <= finish) {
+    result = `${result}${i}`;
+    i = i + 1; // eslint-disable-line operator-assignment
+  }
+
+  return result;
+};
+*/
