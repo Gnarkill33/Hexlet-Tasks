@@ -47,7 +47,7 @@ const normalizeUrl = (site) => {
 
 convertText('Hello'); // 'Hello'
 convertText('hello'); // 'olleh'
- 
+
 // Не забудьте учесть пустую строку
 convertText(''); // ''
 Перевернуть строчку можно используя функцию reverse(). В качестве аргумента в неё нужно передать строку, которую мы хотим перевернуть:
@@ -166,8 +166,7 @@ let i = initialNumber;
 
 // ЗАДАНИЕ 5
 
-/*
-Реализуйте функцию joinNumbersFromRange(), которая объединяет все числа из диапазона в строку и возвращает её:
+/* Реализуйте функцию joinNumbersFromRange(), которая объединяет все числа из диапазона в строку и возвращает её:
 
 joinNumbersFromRange(1, 1); // '1'
 joinNumbersFromRange(2, 3); // '23'
@@ -197,5 +196,88 @@ const joinNumbersFromRange = (start, finish) => {
   }
 
   return result;
+};
+*/
+
+/*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 6
+
+/* Реализуйте функцию mySubstr(), которая извлекает из строки подстроку указанной длины. Она принимает на вход два аргумента (строку и длину) и возвращает подстроку, начиная с первого символа:
+
+const text = 'If I look back I am lost';
+console.log(mySubstr(text, 1));  # => 'I'
+console.log(mySubstr(text, 7));  # => 'If I lo'
+В этом задании аргумент, обозначающий длину извлекаемой подстроки, не может быть длиннее самой строки.
+
+Используйте тот же подход, что в функции для переворота строки из урока: собирайте строку-результат в цикле, перебирая начальную строку до определённого момента.
+*/
+
+/* МОЕ РЕШЕНИЕ
+const mySubstr = (text, length) => {
+  let i = 0;
+  let result = '';
+  while (i < length) {
+    result = `${result}${text[i]}`;
+    i += 1;
+  }
+  return result;
+};
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+const mySubstr = (string, length) => {
+  let resultString = '';
+  let i = 0;
+  while (i < length) {
+    resultString += string[i];
+    i += 1;
+  }
+
+  return resultString;
+};
+*/
+
+/*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 7
+
+/* Функция countChars() из теории считает, сколько раз входит буква в предложение и при этом учитывает регистр букв. То есть A и a с её точки зрения разные символы. Реализуйте вариант этой же функции, так чтобы регистр букв был не важен:
+
+countChars('HexlEt', 'e'); // 2
+countChars('HexlEt', 'E'); // 2
+*/
+
+/* МОЕ РЕШЕНИЕ
+const countChars = (string, char) => {
+  if (string === '') {
+    return 0;
+  }
+  let i = 0;
+  let count = 0;
+  const newString = string.toLowerCase();
+  const letter = char.toLowerCase();
+  while (i <= string.length) {
+    if (newString[i] === letter) {
+      count += 1;
+    }
+    i += 1;
+  }
+  return count;
+};
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+const countChars = (str, char) => {
+  let i = 0;
+  let count = 0;
+  while (i < str.length) {
+    if (str[i].toLowerCase() === char.toLowerCase()) {
+      count = count + 1; // eslint-disable-line operator-assignment
+    }
+    i = i + 1; // eslint-disable-line operator-assignment
+  }
+
+  return count;
 };
 */
