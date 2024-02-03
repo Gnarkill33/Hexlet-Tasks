@@ -318,3 +318,49 @@ const encrypt = (str) => {
   return result;
 };
 */
+
+/*************************************************************************************************************************************/
+
+// ЗАДАНИЕ 9
+
+/* 
+В файле myMathModule.js:
+
+Создайте функцию getTriangleArea(), которая принимает два аргумента h и b и вычисляет площадь треугольника по формуле A = 1/2 * h * b, где h — высота, а b — основание треугольника.
+
+getTriangleArea(5, 10) === 25;
+getTriangleArea(15, 12) === 90;
+
+Экспортируйте функцию.
+
+В файле solution.js:
+
+Импортируйте функцию getTriangleArea() из модуля myMathModule.
+Создайте функцию, которая принимает аргумент n и возвращает площадь треугольника высотой n и основанием n2/2. Используйте функцию square() (принимает число и возвращает его квадрат).
+Экспортируйте созданную функцию по умолчанию.
+*/
+
+/* МОЕ РЕШЕНИЕ
+import square from './square.js';
+
+// BEGIN (write your solution here)
+import { getTriangleArea } from './myMathModule.js';
+
+const calculateArea = (n) => {
+  const base = square(n) / 2;
+  const area = getTriangleArea(n, base);
+  return area;
+};
+export default calculateArea;
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+import square from './square.js';
+
+// BEGIN
+import { getTriangleArea } from './myMathModule.js';
+
+const solution = (n) => getTriangleArea(n, square(n) / 2);
+
+export default solution;
+*/
