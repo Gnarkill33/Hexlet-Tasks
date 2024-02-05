@@ -1,3 +1,4 @@
+// ОСНОВЫ JS
 
 // ЗАДАНИЕ 1
 
@@ -150,7 +151,16 @@ finished!
 */
 
 /* МОЕ РЕШЕНИЕ
--------------------------------------
+const printNumbers = (initialNumber) => {
+  // BEGIN (write your solution here)
+  let i = initialNumber;
+  while (i >= 1) {
+    console.log(i);
+    i -= 1;
+  }
+  console.log('finished!');
+  // END
+};
 */
 
 /* ДРУГОЕ РЕШЕНИЕ
@@ -364,3 +374,57 @@ const solution = (n) => getTriangleArea(n, square(n) / 2);
 
 export default solution;
 */
+
+/*************************************************************************************************************************************/
+
+// Массивы
+
+// ЗАДАНИЕ 1
+
+/* 
+Реализуйте и экспортируйте функцию getWeekends(), которая возвращает массив из двух элементов – названий выходных дней на английском. Функция принимает на вход параметр – формат возврата. Всего есть два возможных значения:
+
+'long' – вернётся массив, содержащий значения saturday и sunday
+'short' – вернётся массив со значениями sat и sun
+import { getWeekends } from '../dates.js';
+
+// Возвращаемое значение не демонстрируем, так как это равносильно ответу
+getWeekends('long'); // Аналог вызова без аргументов (long — формат по умолчанию)
+getWeekends('short'); // Вызов вернёт массив с короткими значениями
+*/
+
+/* МОЕ РЕШЕНИЕ
+const getWeekends = (format) => {
+  const long = ['saturday', 'sunday'];
+  const short = ['sat', 'sun'];
+  if (format === 'short') {
+    return short;
+  }
+  return long;
+};
+
+export { getWeekends };
+*/
+
+/* ДРУГОЕ РЕШЕНИЕ
+export const getWeekends = (format = 'long') => {
+  const longFormat = ['saturday', 'sunday'];
+  const shortFormat = ['sat', 'sun'];
+
+  switch (format) {
+    case 'long':
+      return longFormat;
+    case 'short':
+      return shortFormat;
+    default:
+      // тут нужно выбрасывать ошибку,
+      // что данный формат не поддерживается.
+      // будем проходить позже, как это делать, поэтому
+      // пока достаточно просто сделать break;
+      console.log('This format is not supported');
+      break;
+  }
+};
+*/
+
+/*************************************************************************************************************************************/
